@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Embarque</title>
+</head>
+<body>
+
+<h2>Acesso ao Documento</h2>
+
+<label>CNPJ:</label><br>
+<input type="text" id="cnpj"><br><br>
+
+<label>HOUSE BL:</label><br>
+<input type="password" id="bl"><br><br>
+
+<button onclick="login()">Acessar</button>
+
+<div id="resultado" style="margin-top:20px;"></div>
+
+<script>
+function login() {
+  var cnpj = document.getElementById("cnpj").value;
+  var bl = document.getElementById("bl").value;
+
+  // Simulação (dados fixos)
+  if(cnpj === "12345678000199" && bl === "BL123456") {
+    document.getElementById("resultado").innerHTML = `
+      <h3>Documento encontrado</h3>
+      <p>Cliente: Empresa Exemplo</p>
+      <p>BL: BL123456</p>
+      <a href="documento.pdf" target="_blank">Visualizar PDF</a><br><br>
+      <button onclick="window.print()">Imprimir</button>
+    `;
+  } else {
+    document.getElementById("resultado").innerHTML = "Acesso inválido!";
+  }
+}
+</script>
+
+</body>
+</html>
